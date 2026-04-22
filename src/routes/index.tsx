@@ -321,68 +321,6 @@ function Checklist() {
   );
 }
 
-function Letter() {
-  return (
-    <section id="letter" className="border-b border-border bg-foreground text-background">
-      <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
-        <div className="mb-10 flex items-baseline justify-between font-mono text-xs uppercase tracking-[0.2em] opacity-60">
-          <span>An open letter</span>
-          <span>Send to anyone, anytime</span>
-        </div>
-
-        <blockquote className="font-display text-2xl font-light leading-[1.45] md:text-3xl lg:text-4xl">
-          <span className="text-accent">"</span>Oh, hi. It looks like you've
-          given me a bit of reading work to do, but it doesn't seem to be
-          something you took the time to proofread or shorten to respect my
-          time.
-          <br />
-          <br />
-          If you did, sorry, the perception's still there. Please let me know
-          that you have, or when you have, done the very important work of{" "}
-          <span className="italic underline-wavy">owning your output</span>.
-          <br />
-          <br />
-          Even if you've used other avenues to generate this reading work, it
-          is still something I only see as from{" "}
-          <span className="text-accent">you</span>.<span className="text-accent">"</span>
-        </blockquote>
-
-        <CopyLetter />
-      </div>
-    </section>
-  );
-}
-
-function CopyLetter() {
-  const text = `Oh, hi. It looks like you've given me a bit of reading work to do, but it doesn't seem to be something you took the time to proofread or shorten to respect my time. If you did, sorry, the perception's still there. Please let me know that you have, or when you have, done the very important work of owning your output, as even if you've used other avenues to generate this reading work, it is still something I only see as from you.\n\nvia no-slop.ai`;
-
-  const [copied, setCopied] = useState(false);
-
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore
-    }
-  };
-
-  return (
-    <div className="mt-12 flex flex-wrap items-center gap-4">
-      <button
-        onClick={copy}
-        className="inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3.5 font-mono text-sm uppercase tracking-wider text-accent-foreground transition-all hover:opacity-90"
-      >
-        {copied ? "✓ Copied" : "Copy letter"}
-      </button>
-      <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-50">
-        Paste into any reply
-      </span>
-    </div>
-  );
-}
-
 function Marquee() {
   const words = [
     "own your output",
