@@ -4,7 +4,7 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "no-slop.ai — don't send what you didn't read" },
+      { title: "no-slop.ai · don't send what you didn't read" },
       {
         name: "description",
         content:
@@ -131,7 +131,7 @@ function Manifesto() {
     {
       n: "03",
       t: "Your name, your words.",
-      d: "Whatever tool you used to generate it — once it leaves your fingers, it's from you.",
+      d: "Whatever tool you used to generate it, once it leaves your fingers, it's from you.",
     },
     {
       n: "04",
@@ -148,7 +148,7 @@ function Manifesto() {
             The manifesto
           </h2>
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            §01 — §04
+            §01 · §04
           </span>
         </div>
 
@@ -195,10 +195,10 @@ function BadVsGood() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Bad */}
-          <div className="rounded-lg border-2 border-destructive/40 bg-background p-6 md:p-8">
+          <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
             <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
-              Slop
+              Don't
             </div>
             <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
               <p className="text-foreground">
@@ -228,11 +228,11 @@ function BadVsGood() {
           <div className="rounded-lg border-2 border-accent bg-background p-6 md:p-8">
             <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-accent">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-              Signal
+              Do
             </div>
             <div className="space-y-3 font-mono text-sm leading-relaxed">
               <p>
-                "Yes — but only if we lock the budget by Friday.
+                "Yes, but only if we lock the budget by Friday.
               </p>
               <p>
                 Two risks I'd flag: vendor lock-in, and the migration window
@@ -342,7 +342,7 @@ function Letter() {
           time.
           <br />
           <br />
-          If you did — sorry, the perception's still there. Please let me know
+          If you did, sorry, the perception's still there. Please let me know
           that you have, or when you have, done the very important work of{" "}
           <span className="italic underline-wavy">owning your output</span>.
           <br />
@@ -359,7 +359,7 @@ function Letter() {
 }
 
 function CopyLetter() {
-  const text = `Oh, hi. It looks like you've given me a bit of reading work to do, but it doesn't seem to be something you took the time to proofread or shorten to respect my time. If you did, sorry, the perception's still there. Please let me know that you have, or when you have, done the very important work of owning your output, as even if you've used other avenues to generate this reading work, it is still something I only see as from you.\n\n— via no-slop.ai`;
+  const text = `Oh, hi. It looks like you've given me a bit of reading work to do, but it doesn't seem to be something you took the time to proofread or shorten to respect my time. If you did, sorry, the perception's still there. Please let me know that you have, or when you have, done the very important work of owning your output, as even if you've used other avenues to generate this reading work, it is still something I only see as from you.\n\nvia no-slop.ai`;
 
   const [copied, setCopied] = useState(false);
 
