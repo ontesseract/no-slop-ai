@@ -28,12 +28,10 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground grain">
       <Nav />
       <Hero />
-      <Manifesto />
       <BadVsGood />
+      <Manifesto />
       <Checklist />
-      <Letter />
       <Marquee />
-      <Share />
       <Footer />
     </div>
   );
