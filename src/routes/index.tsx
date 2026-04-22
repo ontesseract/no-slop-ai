@@ -47,20 +47,17 @@ function Nav() {
           </span>
         </a>
         <div className="flex items-center gap-6 font-mono text-xs uppercase tracking-[0.18em]">
-          <a href="#manifesto" className="hover:text-accent transition-colors">
-            Manifesto
-          </a>
           <a href="#how" className="hover:text-accent transition-colors">
             How
           </a>
-          <a href="#letter" className="hover:text-accent transition-colors">
-            Letter
+          <a href="#manifesto" className="hover:text-accent transition-colors">
+            Manifesto
           </a>
           <a
-            href="#share"
+            href="#how"
             className="rounded-full bg-foreground px-4 py-2 text-background hover:bg-accent transition-colors"
           >
-            Share →
+            Read →
           </a>
         </div>
       </div>
