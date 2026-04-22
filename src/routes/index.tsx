@@ -28,12 +28,10 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground grain">
       <Nav />
       <Hero />
-      <Manifesto />
       <BadVsGood />
+      <Manifesto />
       <Checklist />
-      <Letter />
       <Marquee />
-      <Share />
       <Footer />
     </div>
   );
@@ -49,20 +47,17 @@ function Nav() {
           </span>
         </a>
         <div className="flex items-center gap-6 font-mono text-xs uppercase tracking-[0.18em]">
-          <a href="#manifesto" className="hover:text-accent transition-colors">
-            Manifesto
-          </a>
           <a href="#how" className="hover:text-accent transition-colors">
             How
           </a>
-          <a href="#letter" className="hover:text-accent transition-colors">
-            Letter
+          <a href="#manifesto" className="hover:text-accent transition-colors">
+            Manifesto
           </a>
           <a
-            href="#share"
+            href="#how"
             className="rounded-full bg-foreground px-4 py-2 text-background hover:bg-accent transition-colors"
           >
-            Share →
+            Read →
           </a>
         </div>
       </div>
@@ -94,17 +89,17 @@ function Hero() {
 
         <div className="mt-12 flex flex-wrap items-center gap-4">
           <a
-            href="#letter"
+            href="#how"
             className="group inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3.5 font-mono text-sm uppercase tracking-wider text-background transition-all hover:bg-accent"
           >
-            Read the letter
+            See an example
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
-            href="#share"
+            href="#manifesto"
             className="inline-flex items-center gap-3 rounded-full border border-foreground/30 px-6 py-3.5 font-mono text-sm uppercase tracking-wider transition-all hover:border-foreground hover:bg-foreground/5"
           >
-            Send this to someone
+            Read the manifesto
           </a>
         </div>
       </div>
@@ -326,68 +321,6 @@ function Checklist() {
   );
 }
 
-function Letter() {
-  return (
-    <section id="letter" className="border-b border-border bg-foreground text-background">
-      <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
-        <div className="mb-10 flex items-baseline justify-between font-mono text-xs uppercase tracking-[0.2em] opacity-60">
-          <span>An open letter</span>
-          <span>Send to anyone, anytime</span>
-        </div>
-
-        <blockquote className="font-display text-2xl font-light leading-[1.45] md:text-3xl lg:text-4xl">
-          <span className="text-accent">"</span>Oh, hi. It looks like you've
-          given me a bit of reading work to do, but it doesn't seem to be
-          something you took the time to proofread or shorten to respect my
-          time.
-          <br />
-          <br />
-          If you did, sorry, the perception's still there. Please let me know
-          that you have, or when you have, done the very important work of{" "}
-          <span className="italic underline-wavy">owning your output</span>.
-          <br />
-          <br />
-          Even if you've used other avenues to generate this reading work, it
-          is still something I only see as from{" "}
-          <span className="text-accent">you</span>.<span className="text-accent">"</span>
-        </blockquote>
-
-        <CopyLetter />
-      </div>
-    </section>
-  );
-}
-
-function CopyLetter() {
-  const text = `Oh, hi. It looks like you've given me a bit of reading work to do, but it doesn't seem to be something you took the time to proofread or shorten to respect my time. If you did, sorry, the perception's still there. Please let me know that you have, or when you have, done the very important work of owning your output, as even if you've used other avenues to generate this reading work, it is still something I only see as from you.\n\nvia no-slop.ai`;
-
-  const [copied, setCopied] = useState(false);
-
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore
-    }
-  };
-
-  return (
-    <div className="mt-12 flex flex-wrap items-center gap-4">
-      <button
-        onClick={copy}
-        className="inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3.5 font-mono text-sm uppercase tracking-wider text-accent-foreground transition-all hover:opacity-90"
-      >
-        {copied ? "✓ Copied" : "Copy letter"}
-      </button>
-      <span className="font-mono text-xs uppercase tracking-[0.2em] opacity-50">
-        Paste into any reply
-      </span>
-    </div>
-  );
-}
-
 function Marquee() {
   const words = [
     "own your output",
@@ -415,62 +348,6 @@ function Marquee() {
   );
 }
 
-function Share() {
-  const url = "https://no-slop.ai";
-  const msg = "Please don't send AI-generated content you haven't read.";
-
-  const links = [
-    {
-      label: "Twitter / X",
-      href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(msg)}&url=${encodeURIComponent(url)}`,
-    },
-    {
-      label: "LinkedIn",
-      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-    },
-    {
-      label: "Email",
-      href: `mailto:?subject=${encodeURIComponent("no-slop.ai")}&body=${encodeURIComponent(msg + "\n\n" + url)}`,
-    },
-  ];
-
-  return (
-    <section id="share" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="grid gap-12 md:grid-cols-2 md:items-end">
-          <div>
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-              Spread the word
-            </span>
-            <h2 className="mt-4 font-display text-5xl font-light tracking-tight md:text-7xl">
-              Send this <span className="italic">link,</span>
-              <br />
-              not a wall of text.
-            </h2>
-          </div>
-          <div className="space-y-3">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-lg border border-border bg-card px-6 py-5 transition-all hover:border-foreground hover:bg-foreground hover:text-background"
-              >
-                <span className="font-mono text-sm uppercase tracking-wider">
-                  {l.label}
-                </span>
-                <span className="text-2xl transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Footer() {
   return (
