@@ -26,12 +26,9 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground grain">
-      <Nav />
       <Hero />
       <BadVsGood />
       <Manifesto />
-      <Checklist />
-      <Marquee />
       <Footer />
     </div>
   );
