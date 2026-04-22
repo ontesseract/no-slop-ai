@@ -112,9 +112,6 @@ function Manifesto() {
           <h2 className="font-display text-5xl font-light tracking-tight md:text-7xl">
             The manifesto
           </h2>
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            §01 · §04
-          </span>
         </div>
 
         <div className="grid gap-px bg-border md:grid-cols-2">
