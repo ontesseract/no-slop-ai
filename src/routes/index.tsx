@@ -348,62 +348,6 @@ function Marquee() {
   );
 }
 
-function Share() {
-  const url = "https://no-slop.ai";
-  const msg = "Please don't send AI-generated content you haven't read.";
-
-  const links = [
-    {
-      label: "Twitter / X",
-      href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(msg)}&url=${encodeURIComponent(url)}`,
-    },
-    {
-      label: "LinkedIn",
-      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-    },
-    {
-      label: "Email",
-      href: `mailto:?subject=${encodeURIComponent("no-slop.ai")}&body=${encodeURIComponent(msg + "\n\n" + url)}`,
-    },
-  ];
-
-  return (
-    <section id="share" className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="grid gap-12 md:grid-cols-2 md:items-end">
-          <div>
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-              Spread the word
-            </span>
-            <h2 className="mt-4 font-display text-5xl font-light tracking-tight md:text-7xl">
-              Send this <span className="italic">link,</span>
-              <br />
-              not a wall of text.
-            </h2>
-          </div>
-          <div className="space-y-3">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-lg border border-border bg-card px-6 py-5 transition-all hover:border-foreground hover:bg-foreground hover:text-background"
-              >
-                <span className="font-mono text-sm uppercase tracking-wider">
-                  {l.label}
-                </span>
-                <span className="text-2xl transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Footer() {
   return (
