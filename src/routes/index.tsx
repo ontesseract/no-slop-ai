@@ -34,33 +34,6 @@ function Home() {
   );
 }
 
-function Nav() {
-  return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            v1 · est. 2026
-          </span>
-        </a>
-        <div className="flex items-center gap-6 font-mono text-xs uppercase tracking-[0.18em]">
-          <a href="#how" className="hover:text-accent transition-colors">
-            How
-          </a>
-          <a href="#manifesto" className="hover:text-accent transition-colors">
-            Manifesto
-          </a>
-          <a
-            href="#how"
-            className="rounded-full bg-foreground px-4 py-2 text-background hover:bg-accent transition-colors"
-          >
-            Read →
-          </a>
-        </div>
-      </div>
-    </header>
-  );
-}
 
 function Hero() {
   return (
