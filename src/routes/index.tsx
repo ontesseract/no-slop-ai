@@ -89,17 +89,17 @@ function Hero() {
 
         <div className="mt-12 flex flex-wrap items-center gap-4">
           <a
-            href="#letter"
+            href="#how"
             className="group inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3.5 font-mono text-sm uppercase tracking-wider text-background transition-all hover:bg-accent"
           >
-            Read the letter
+            See an example
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
-            href="#share"
+            href="#manifesto"
             className="inline-flex items-center gap-3 rounded-full border border-foreground/30 px-6 py-3.5 font-mono text-sm uppercase tracking-wider transition-all hover:border-foreground hover:bg-foreground/5"
           >
-            Send this to someone
+            Read the manifesto
           </a>
         </div>
       </div>
