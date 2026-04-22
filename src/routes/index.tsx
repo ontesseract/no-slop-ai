@@ -235,7 +235,7 @@ function Footer() {
           </p>
         </div>
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          © {new Date().getFullYear()} · made with care, not tokens
+          © {new Date().getFullYear()}
         </div>
       </div>
     </footer>
