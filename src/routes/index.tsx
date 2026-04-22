@@ -4,7 +4,7 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "no-slop.ai — don't send what you didn't read" },
+      { title: "no-slop.ai · don't send what you didn't read" },
       {
         name: "description",
         content:
