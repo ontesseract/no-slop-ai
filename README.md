@@ -49,9 +49,4 @@ If you make changes, try to preserve the site's voice:
 
 ## AI Disclosure
 
-I used AI tools to help create this site.
-
-- [lovable.dev](https://lovable.dev/) helped with initial site creation and iteration.
-- Codex helped with refactoring.
-
-All final content and code choices were reviewed and intentionally kept.
+I used AI tools to help create this site ([lovable.dev](https://lovable.dev/) and Codex). All final content and code choices were reviewed and intentionally kept.
