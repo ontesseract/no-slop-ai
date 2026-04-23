@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -34,14 +33,13 @@ function Home() {
   );
 }
 
-
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-border">
       <div className="mx-auto max-w-6xl px-6 pb-24 pt-20 md:pt-32">
         <div className="mb-10 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse" />
-          A polite public service announcement
+          <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse" />A polite
+          public service announcement
         </div>
 
         <h1 className="font-display text-[clamp(3.5rem,11vw,10rem)] font-light leading-[0.88] tracking-tight">
@@ -53,8 +51,8 @@ function Hero() {
 
         <p className="mt-12 max-w-2xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
           If you wouldn't read it, don't expect me to. Generating text is cheap.
-          <span className="text-foreground"> Reading it is not.</span> Own your
-          output before you hit send.
+          <span className="text-foreground"> Reading it is not.</span> Own your output before you
+          hit send.
         </p>
 
         <div className="mt-12 flex flex-wrap items-center gap-4">
@@ -73,7 +71,6 @@ function Hero() {
           </a>
         </div>
       </div>
-
     </section>
   );
 }
@@ -128,9 +125,7 @@ function Manifesto() {
               <h3 className="mt-6 font-display text-3xl font-light leading-tight md:text-4xl">
                 {p.t}
               </h3>
-              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                {p.d}
-              </p>
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{p.d}</p>
             </div>
           ))}
         </div>
@@ -152,58 +147,37 @@ function BadVsGood() {
           Two messages. Same intent. One respects the reader.
         </p>
 
-        <div className="space-y-10">
-          {/* Example 1 */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Bad */}
-            <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
-              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
-                Don't
-              </div>
-              <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
-                <p>
-                  "Hey! Great question. Let me unpack this comprehensively.
-                </p>
-                <p>
-                  There are several multifaceted considerations to take into
-                  account when approaching this challenge. First and foremost,
-                  it's important to recognize that...
-                </p>
-                <p>
-                  ▸ Stakeholder alignment
-                  <br />
-                  ▸ Strategic synergies
-                  <br />
-                  ▸ Cross-functional paradigms
-                </p>
-                <p>
-                  In conclusion, by leveraging best practices we can unlock
-                  transformative outcomes. Let me know if you'd like me to dive
-                  deeper into any of these areas! 🚀"
-                </p>
-              </div>
+        {/* Example 1 */}
+        <div className="mb-10 grid gap-6 md:grid-cols-2">
+          {/* Bad */}
+          <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
+            <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
+              Don't
             </div>
-
-            {/* Good */}
-            <div className="rounded-lg border-2 border-success/60 bg-success/15 p-6 md:p-8">
-              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-success">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
-                Do
-              </div>
-              <div className="space-y-3 font-mono text-sm leading-relaxed">
-                <p>
-                  "Yes, but only if we lock the budget by Friday.
-                </p>
-                <p>
-                  Two risks I'd flag: vendor lock-in, and the migration window
-                  clashing with Q3 launch.
-                </p>
-                <p>I drafted with AI then cut it to this. Happy to expand."</p>
-              </div>
+            <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
+              <p>Here's the AI research brief on pricing expansion.</p>
+              <p>[5 pages of market sizing, competitor tables, and SWOT analysis]</p>
             </div>
           </div>
 
+          {/* Good */}
+          <div className="rounded-lg border-2 border-success/60 bg-success/15 p-6 md:p-8">
+            <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-success">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
+              Do
+            </div>
+            <div className="space-y-3 font-mono text-sm leading-relaxed">
+              <p>For the June launch, I wouldn't add more pricing tiers yet.</p>
+              <p>
+                The research points to confusion in the current plan, not demand for extra options,
+                so I'd simplify the pricing page first.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-10">
           {/* Example 2 */}
           <div className="grid gap-6 md:grid-cols-2">
             {/* Bad */}
@@ -213,11 +187,8 @@ function BadVsGood() {
                 Don't
               </div>
               <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
-                <p>
-                  "AI wrote this SQL query. Why doesn't it work?
-                </p>
+                <p>AI wrote this SQL query. Why doesn't it work?</p>
                 <p>[120 lines of schema, prompt, and generated query]</p>
-                <p>Can you fix it?"</p>
               </div>
             </div>
 
@@ -228,15 +199,45 @@ function BadVsGood() {
                 Do
               </div>
               <div className="space-y-3 font-mono text-sm leading-relaxed">
+                <p>This SQL query duplicates rows after joining orders to line_items.</p>
                 <p>
-                  "This SQL query duplicates rows after joining orders to
-                  line_items.
+                  I need one row per order with total quantity. What join or grouping am I missing?
                 </p>
+                <p>Relevant query attached.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Example 3 */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Bad */}
+            <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
+              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
+                Don't
+              </div>
+              <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
+                <p>Hey! Great question. Let me unpack this comprehensively.</p>
                 <p>
-                  I need one row per order with total quantity. What join or
-                  grouping am I missing?
+                  [4 paragraphs of AI-generated text about stakeholder alignment, strategic
+                  synergies, cross-functional paradigms, and transformative outcomes]
                 </p>
-                <p>Relevant query attached."</p>
+              </div>
+            </div>
+
+            {/* Good */}
+            <div className="rounded-lg border-2 border-success/60 bg-success/15 p-6 md:p-8">
+              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-success">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
+                Do
+              </div>
+              <div className="space-y-3 font-mono text-sm leading-relaxed">
+                <p>Yes, but only if we lock the budget by Friday.</p>
+                <p>
+                  Two risks I'd flag: vendor lock-in, and the migration window clashing with Q3
+                  launch.
+                </p>
+                <p>I drafted with AI then cut it to this. Happy to expand.</p>
               </div>
             </div>
           </div>
@@ -265,8 +266,7 @@ function Footer() {
               nohello.net
             </a>
             <br />
-            Built for anyone tired of being the editor of someone else's
-            unedited prompts.
+            Built for anyone tired of being the editor of someone else's unedited prompts.
           </p>
         </div>
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground shrink-0">
