@@ -125,12 +125,9 @@ function Manifesto() {
               key={p.n}
               className="group bg-background p-8 transition-colors hover:bg-card md:p-12"
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-start">
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
                   {p.n}
-                </span>
-                <span className="font-mono text-xs text-muted-foreground transition-transform group-hover:translate-x-1">
-                  →
                 </span>
               </div>
               <h3 className="mt-6 font-display text-3xl font-light leading-tight md:text-4xl">
