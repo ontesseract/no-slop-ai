@@ -3,21 +3,34 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "no-slop.ai · don't send what you didn't read" },
+      { title: "no-slop.ai · own your output" },
       {
         name: "description",
         content:
-          "A polite request: please don't send AI-generated content you haven't read, edited, or understood. Own your output.",
+          "Don't send AI-generated content you haven't read, edited, or understood. Own your output.",
       },
-      { property: "og:title", content: "no-slop.ai" },
+      { name: "robots", content: "index,follow" },
+      { property: "og:title", content: "no-slop.ai · own your output" },
       {
         property: "og:description",
         content:
-          "Please don't send AI-generated content you haven't read, edited, or understood. Own your output.",
+          "Don't send AI-generated content you haven't read, edited, or understood. Own your output.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://no-slop.ai/" },
+      { property: "og:image", content: "https://no-slop.ai/og-share.png" },
+      { property: "og:image:alt", content: "Own Your Output. Don't Send Slop." },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "no-slop.ai · own your output" },
+      {
+        name: "twitter:description",
+        content:
+          "Don't send AI-generated content you haven't read, edited, or understood. Own your output.",
+      },
+      { name: "twitter:image", content: "https://no-slop.ai/og-share.png" },
+      { name: "twitter:image:alt", content: "Own Your Output. Don't Send Slop." },
     ],
+    links: [{ rel: "canonical", href: "https://no-slop.ai/" }],
   }),
   component: Home,
 });
