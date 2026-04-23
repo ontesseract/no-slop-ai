@@ -74,9 +74,6 @@ function Hero() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute -right-32 top-20 hidden font-display text-[20rem] font-light leading-none text-accent/8 md:block">
-        ✺
-      </div>
     </section>
   );
 }
@@ -155,52 +152,108 @@ function BadVsGood() {
           Two messages. Same intent. One respects the reader.
         </p>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {/* Bad */}
-          <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
-            <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
-              Don't
+        <div className="space-y-10">
+          {/* Example 1 */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Bad */}
+            <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
+              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
+                Don't
+              </div>
+              <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
+                <p className="text-foreground">
+                  "Hey! Great question. Let me unpack this comprehensively.
+                </p>
+                <p>
+                  There are several multifaceted considerations to take into
+                  account when approaching this challenge. First and foremost,
+                  it's important to recognize that...
+                </p>
+                <p>
+                  ▸ Stakeholder alignment
+                  <br />
+                  ▸ Strategic synergies
+                  <br />
+                  ▸ Cross-functional paradigms
+                </p>
+                <p>
+                  In conclusion, by leveraging best practices we can unlock
+                  transformative outcomes. Let me know if you'd like me to dive
+                  deeper into any of these areas! 🚀"
+                </p>
+              </div>
             </div>
-            <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
-              <p className="text-foreground">
-                "Hey! Great question. Let me unpack this comprehensively.
-              </p>
-              <p>
-                There are several multifaceted considerations to take into
-                account when approaching this challenge. First and foremost,
-                it's important to recognize that...
-              </p>
-              <p>
-                ▸ Stakeholder alignment
-                <br />
-                ▸ Strategic synergies
-                <br />
-                ▸ Cross-functional paradigms
-              </p>
-              <p>
-                In conclusion, by leveraging best practices we can unlock
-                transformative outcomes. Let me know if you'd like me to dive
-                deeper into any of these areas! 🚀"
-              </p>
+
+            {/* Good */}
+            <div className="rounded-lg border-2 border-success/60 bg-success/15 p-6 md:p-8">
+              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-success">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
+                Do
+              </div>
+              <div className="space-y-3 font-mono text-sm leading-relaxed">
+                <p>
+                  "Yes, but only if we lock the budget by Friday.
+                </p>
+                <p>
+                  Two risks I'd flag: vendor lock-in, and the migration window
+                  clashing with Q3 launch.
+                </p>
+                <p>I drafted with AI then cut it to this. Happy to expand."</p>
+              </div>
             </div>
           </div>
 
-          {/* Good */}
-          <div className="rounded-lg border-2 border-accent bg-background p-6 md:p-8">
-            <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-accent">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-              Do
+          {/* Example 2 */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Bad */}
+            <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
+              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
+                Don't
+              </div>
+              <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
+                <p className="text-foreground">
+                  "AI said this, how should I fix it?
+                </p>
+                <p className="whitespace-pre-wrap">
+                  {`> User: write me a function that parses a CSV with quoted fields and embedded newlines in TypeScript, with full type safety and error handling for malformed rows...
+
+> Assistant: Certainly! Here's a comprehensive solution. First, let's discuss the approach. CSV parsing involves several edge cases including quoted fields, escaped quotes, embedded newlines, and trailing commas. Below is a robust implementation:
+
+\`\`\`ts
+export function parseCSV(input: string): string[][] {
+  const rows: string[][] = [];
+  // ... 200 more lines ...
+}
+\`\`\`
+
+This handles RFC 4180 compliance. Would you like me to add streaming support, async iteration, or...`}
+                </p>
+                <p>
+                  It's throwing an error on line 47 I think? Or maybe it's the
+                  types. Can you take a look?"
+                </p>
+              </div>
             </div>
-            <div className="space-y-3 font-mono text-sm leading-relaxed">
-              <p>
-                "Yes, but only if we lock the budget by Friday.
-              </p>
-              <p>
-                Two risks I'd flag: vendor lock-in, and the migration window
-                clashing with Q3 launch.
-              </p>
-              <p>I drafted with AI then cut it to this. Happy to expand."</p>
+
+            {/* Good */}
+            <div className="rounded-lg border-2 border-success/60 bg-success/15 p-6 md:p-8">
+              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-success">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
+                Do
+              </div>
+              <div className="space-y-3 font-mono text-sm leading-relaxed">
+                <p>
+                  "My CSV parser throws on line 47 when a quoted field contains
+                  a newline.
+                </p>
+                <p>
+                  AI suggested tracking quote state in a flag, but it still
+                  splits the row early. Any idea what I'm missing?
+                </p>
+                <p>Snippet attached, ~20 lines."</p>
+              </div>
             </div>
           </div>
         </div>
@@ -213,11 +266,11 @@ function Footer() {
   return (
     <footer className="border-border">
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 py-12 md:flex-row md:items-end">
-        <div>
+        <div className="flex-1">
           <div className="font-display text-4xl font-light tracking-tight">
             no-slop<span className="text-accent">.ai</span>
           </div>
-          <p className="mt-2 max-w-md text-sm text-muted-foreground">
+          <p className="mt-2 text-sm text-muted-foreground">
             Inspired by{" "}
             <a
               href="https://nohello.net"
@@ -227,11 +280,12 @@ function Footer() {
             >
               nohello.net
             </a>
-            . Built for anyone tired of being the editor of someone else's
+            <br />
+            Built for anyone tired of being the editor of someone else's
             unedited prompts.
           </p>
         </div>
-        <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+        <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground shrink-0">
           © {new Date().getFullYear()}
         </div>
       </div>
