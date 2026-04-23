@@ -145,7 +145,95 @@ function Manifesto() {
   );
 }
 
-function BadVsGood() {
+function ComparisonSide({ tone, lines }: { tone: "dont" | "do"; lines: string[] }) {
+  const isDont = tone === "dont";
+
+  return (
+    <div
+      data-comparison-side={tone}
+      className={[
+        "p-6 md:p-8 lg:p-10",
+        isDont
+          ? "border-b border-border/70 bg-destructive/[0.08] md:border-b-0"
+          : "bg-success/[0.08]",
+      ].join(" ")}
+    >
+      <div
+        className={[
+          "mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em]",
+          isDont ? "text-destructive" : "text-success",
+        ].join(" ")}
+      >
+        <span
+          className={[
+            "inline-block h-1.5 w-1.5 rounded-full",
+            isDont ? "bg-destructive" : "bg-success",
+          ].join(" ")}
+        />
+        {isDont ? "Don't" : "Do"}
+      </div>
+
+      <div
+        className={[
+          "space-y-3 font-mono text-sm leading-relaxed",
+          isDont ? "text-muted-foreground" : "",
+        ].join(" ")}
+      >
+        {lines.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function BadVsGood() {
+  const comparisonExamples: {
+    id: string;
+    label: string;
+    dont: string[];
+    do: string[];
+  }[] = [
+    {
+      id: "pricing",
+      label: "Research summary",
+      dont: [
+        "Here's the AI research brief on pricing expansion.",
+        "[5 pages of market sizing, competitor tables, and SWOT analysis]",
+      ],
+      do: [
+        "For the June launch, I wouldn't add more pricing tiers yet.",
+        "The research points to confusion in the current plan, not demand for extra options, so I'd simplify the pricing page first.",
+      ],
+    },
+    {
+      id: "sql",
+      label: "Debugging help",
+      dont: [
+        "AI wrote this SQL query. Why doesn't it work?",
+        "[120 lines of schema, prompt, and generated query]",
+      ],
+      do: [
+        "This SQL query duplicates rows after joining orders to line_items.",
+        "I need one row per order with total quantity. What join or grouping am I missing?",
+        "Relevant query attached.",
+      ],
+    },
+    {
+      id: "stakeholder",
+      label: "Executive answer",
+      dont: [
+        "Hey! Great question. Let me unpack this comprehensively.",
+        "[4 paragraphs of AI-generated text about stakeholder alignment, strategic synergies, cross-functional paradigms, and transformative outcomes]",
+      ],
+      do: [
+        "Yes, but only if we lock the budget by Friday.",
+        "Two risks I'd flag: vendor lock-in, and the migration window clashing with Q3 launch.",
+        "I drafted with AI then cut it to this. Happy to expand.",
+      ],
+    },
+  ];
+
   return (
     <section id="how" className="border-b border-border bg-card">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
@@ -158,100 +246,23 @@ function BadVsGood() {
           Two messages. Same intent. One respects the reader.
         </p>
 
-        {/* Example 1 */}
-        <div className="mb-10 grid gap-6 md:grid-cols-2">
-          {/* Bad */}
-          <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
-            <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
-              Don't
-            </div>
-            <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
-              <p>Here's the AI research brief on pricing expansion.</p>
-              <p>[5 pages of market sizing, competitor tables, and SWOT analysis]</p>
-            </div>
-          </div>
-
-          {/* Good */}
-          <div className="rounded-lg border-2 border-success/60 bg-success/15 p-6 md:p-8">
-            <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-success">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
-              Do
-            </div>
-            <div className="space-y-3 font-mono text-sm leading-relaxed">
-              <p>For the June launch, I wouldn't add more pricing tiers yet.</p>
-              <p>
-                The research points to confusion in the current plan, not demand for extra options,
-                so I'd simplify the pricing page first.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-10">
-          {/* Example 2 */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Bad */}
-            <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
-              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
-                Don't
+        <div className="border-y border-border/80 bg-background/50">
+          {comparisonExamples.map((example, index) => (
+            <article
+              key={example.id}
+              data-comparison-pair
+              className="border-b border-border/80 last:border-b-0"
+            >
+              <div className="flex items-center justify-between gap-3 border-b border-border/60 px-6 py-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground md:px-8 lg:px-10">
+                <span>{example.label}</span>
+                <span>{String(index + 1).padStart(2, "0")}</span>
               </div>
-              <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
-                <p>AI wrote this SQL query. Why doesn't it work?</p>
-                <p>[120 lines of schema, prompt, and generated query]</p>
+              <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:divide-x md:divide-border/70">
+                <ComparisonSide tone="dont" lines={example.dont} />
+                <ComparisonSide tone="do" lines={example.do} />
               </div>
-            </div>
-
-            {/* Good */}
-            <div className="rounded-lg border-2 border-success/60 bg-success/15 p-6 md:p-8">
-              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-success">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
-                Do
-              </div>
-              <div className="space-y-3 font-mono text-sm leading-relaxed">
-                <p>This SQL query duplicates rows after joining orders to line_items.</p>
-                <p>
-                  I need one row per order with total quantity. What join or grouping am I missing?
-                </p>
-                <p>Relevant query attached.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Example 3 */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Bad */}
-            <div className="rounded-lg border-2 border-destructive/50 bg-destructive/15 p-6 md:p-8">
-              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-destructive">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-destructive" />
-                Don't
-              </div>
-              <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
-                <p>Hey! Great question. Let me unpack this comprehensively.</p>
-                <p>
-                  [4 paragraphs of AI-generated text about stakeholder alignment, strategic
-                  synergies, cross-functional paradigms, and transformative outcomes]
-                </p>
-              </div>
-            </div>
-
-            {/* Good */}
-            <div className="rounded-lg border-2 border-success/60 bg-success/15 p-6 md:p-8">
-              <div className="mb-5 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-success">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
-                Do
-              </div>
-              <div className="space-y-3 font-mono text-sm leading-relaxed">
-                <p>Yes, but only if we lock the budget by Friday.</p>
-                <p>
-                  Two risks I'd flag: vendor lock-in, and the migration window clashing with Q3
-                  launch.
-                </p>
-                <p>I drafted with AI then cut it to this. Happy to expand.</p>
-              </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -266,7 +277,7 @@ function Footer() {
           <div className="font-display text-4xl font-light tracking-tight">
             no-slop<span className="text-accent">.ai</span>
           </div>
-          Built for anyone tired of being the editor of someone else's unedited prompts.
+          Built for anyone tired of being asked to read someone else's unedited model output.
           <br />
           <p className="mt-2 text-sm text-muted-foreground">
             Inspired by{" "}
