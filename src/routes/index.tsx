@@ -55,17 +55,15 @@ function Hero() {
           public service announcement
         </div>
 
-        <h1 className="font-display text-[clamp(3.5rem,11vw,10rem)] font-light leading-[0.88] tracking-tight">
-          please don't
+        <h1 className="font-display text-4xl font-light tracking-tight sm:text-6xl md:text-8xl">
+          <span>Own Your Output.</span>
           <br />
-          <span className="italic">send</span> me{" "}
-          <span className="underline-wavy text-accent">slop</span>.
+          <span className="italic text-accent">Don't Send Slop.</span>
         </h1>
 
         <p className="mt-12 max-w-2xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
-          If you wouldn't read it, don't expect me to. Generating text is cheap.
-          <span className="text-foreground"> Reading it is not.</span> Own your output before you
-          hit send.
+          If you wouldn't read it, don't expect me to. Generating text is cheap. Reading it is not.
+          Own your output before you hit send.
         </p>
 
         <div className="mt-12 flex flex-wrap items-center gap-4">
@@ -116,7 +114,7 @@ function Manifesto() {
     <section id="manifesto" className="border-b border-border">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="mb-16 flex items-baseline justify-between">
-          <h2 className="font-display text-5xl font-light tracking-tight md:text-7xl">
+          <h2 className="font-display text-4xl font-light tracking-tight md:text-7xl">
             The manifesto
           </h2>
         </div>
@@ -151,7 +149,7 @@ function BadVsGood() {
   return (
     <section id="how" className="border-b border-border bg-card">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <h2 className="mb-4 font-display text-5xl font-light tracking-tight md:text-7xl">
+        <h2 className="mb-4 font-display text-4xl font-light tracking-tight md:text-7xl">
           Don't do this.
           <br />
           <span className="italic text-accent">Do this instead.</span>
@@ -268,6 +266,8 @@ function Footer() {
           <div className="font-display text-4xl font-light tracking-tight">
             no-slop<span className="text-accent">.ai</span>
           </div>
+          Built for anyone tired of being the editor of someone else's unedited prompts.
+          <br />
           <p className="mt-2 text-sm text-muted-foreground">
             Inspired by{" "}
             <a
@@ -279,7 +279,15 @@ function Footer() {
               nohello.net
             </a>
             <br />
-            Built for anyone tired of being the editor of someone else's unedited prompts.
+            Open-source on{" "}
+            <a
+              href="https://github.com/ontesseract/no-slop-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-accent decoration-2 underline-offset-4 hover:text-foreground"
+            >
+              GitHub
+            </a>
           </p>
         </div>
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground shrink-0">
