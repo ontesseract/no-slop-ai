@@ -4,12 +4,6 @@
 
 Live site: [no-slop.ai](https://no-slop.ai/)
 
-## What This Is
-
-The site is a short public service announcement for anyone tired of being asked to read someone else's unedited model output.
-
-Own your output.
-
 ## Inspiration
 
 [nohello.net](https://nohello.net)
