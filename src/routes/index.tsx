@@ -162,7 +162,7 @@ function BadVsGood() {
                 Don't
               </div>
               <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
-                <p className="text-foreground">
+                <p>
                   "Hey! Great question. Let me unpack this comprehensively.
                 </p>
                 <p>
@@ -213,27 +213,11 @@ function BadVsGood() {
                 Don't
               </div>
               <div className="space-y-3 font-mono text-sm leading-relaxed text-muted-foreground">
-                <p className="text-foreground">
-                  "AI said this, how should I fix it?
-                </p>
-                <p className="whitespace-pre-wrap">
-                  {`> User: write me a function that parses a CSV with quoted fields and embedded newlines in TypeScript, with full type safety and error handling for malformed rows...
-
-> Assistant: Certainly! Here's a comprehensive solution. First, let's discuss the approach. CSV parsing involves several edge cases including quoted fields, escaped quotes, embedded newlines, and trailing commas. Below is a robust implementation:
-
-\`\`\`ts
-export function parseCSV(input: string): string[][] {
-  const rows: string[][] = [];
-  // ... 200 more lines ...
-}
-\`\`\`
-
-This handles RFC 4180 compliance. Would you like me to add streaming support, async iteration, or...`}
-                </p>
                 <p>
-                  It's throwing an error on line 47 I think? Or maybe it's the
-                  types. Can you take a look?"
+                  "AI wrote this SQL query. Why doesn't it work?
                 </p>
+                <p>[120 lines of schema, prompt, and generated query]</p>
+                <p>Can you fix it?"</p>
               </div>
             </div>
 
@@ -245,14 +229,14 @@ This handles RFC 4180 compliance. Would you like me to add streaming support, as
               </div>
               <div className="space-y-3 font-mono text-sm leading-relaxed">
                 <p>
-                  "My CSV parser throws on line 47 when a quoted field contains
-                  a newline.
+                  "This SQL query duplicates rows after joining orders to
+                  line_items.
                 </p>
                 <p>
-                  AI suggested tracking quote state in a flag, but it still
-                  splits the row early. Any idea what I'm missing?
+                  I need one row per order with total quantity. What join or
+                  grouping am I missing?
                 </p>
-                <p>Snippet attached, ~20 lines."</p>
+                <p>Relevant query attached."</p>
               </div>
             </div>
           </div>
