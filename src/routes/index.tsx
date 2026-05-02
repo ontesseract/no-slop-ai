@@ -49,37 +49,32 @@ function Home() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-border">
-      <div className="mx-auto max-w-6xl px-6 pb-24 pt-20 md:pt-32">
-        <div className="mb-10 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse" />A polite
-          public service announcement
-        </div>
+      <div className="mx-auto max-w-6xl px-6 pb-20 pt-16 md:pb-28 md:pt-24">
+        <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_12rem] md:items-end lg:grid-cols-[minmax(0,1fr)_14rem]">
+          <div>
+            <div className="mb-8 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse" />A polite
+              public service announcement
+            </div>
 
-        <h1 className="font-display text-4xl font-light tracking-tight sm:text-6xl md:text-8xl">
-          <span>Own Your Output.</span>
-          <br />
-          <span className="italic text-accent">Don't Send Slop.</span>
-        </h1>
+            <h1 className="font-display text-4xl font-light tracking-tight sm:text-6xl md:text-8xl">
+              <span>Own Your Output.</span>
+              <br />
+              <span className="italic text-accent">Don't Send Slop.</span>
+            </h1>
 
-        <p className="mt-12 max-w-2xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
-          If you wouldn't read it, don't expect me to. Generating text is cheap. Reading it is not.
-          Own your output before you hit send.
-        </p>
+            <p className="mt-8 max-w-2xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
+              If you wouldn't read it, don't expect me to. Generating text is cheap. Reading it is
+              not. Own your output before you hit send.
+            </p>
+          </div>
 
-        <div className="mt-12 flex flex-wrap items-center gap-4">
-          <a
-            href="#how"
-            className="group inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3.5 font-mono text-sm uppercase tracking-wider text-background transition-all hover:bg-accent"
-          >
-            See an example
-            <span className="transition-transform group-hover:translate-x-1">→</span>
-          </a>
-          <a
-            href="#manifesto"
-            className="inline-flex items-center gap-3 rounded-full border border-foreground/30 px-6 py-3.5 font-mono text-sm uppercase tracking-wider transition-all hover:border-foreground hover:bg-foreground/5"
-          >
-            Read the manifesto
-          </a>
+          <img
+            src="/favicon.svg"
+            alt=""
+            aria-hidden="true"
+            className="h-28 w-28 justify-self-start md:h-48 md:w-48 md:justify-self-end lg:h-56 lg:w-56"
+          />
         </div>
       </div>
     </section>
